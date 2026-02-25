@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+/* ==========================================
+   Chemtest-inspired Color System
+   - Background: Warm cream/off-white
+   - Accent 1: Mint green (primary)
+   - Accent 2: Sunny yellow
+   - Accent 3: Electric blue
+   - Text: Near-black with warmth
+   ========================================== */
+
+:root {
+  --background: #58DCFF;
+  /* Malibu Blue */
+  --foreground: #141414;
+  /* Thick black */
+
+  --mint: #72e8a4;
+  --mint-dark: #42c97a;
+  --yellow: #FFE500;
+  /* Electric yellow */
+  --yellow-dark: #e6cc1a;
+  --blue: #58DCFF;
+  --blue-dark: #2497c8;
+  --pink: #F64974;
+  /* French Rose Pink */
+  --coral: #ff6b6b;
+
+  --card-bg: #ffffff;
+  /* Pure white inside blocks */
+  --border: #141414;
+  /* Thick black borders */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1a1a1a;
+    --foreground: #f5f0e8;
+    --card-bg: #262626;
+    --border: #f5f0e8;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #6de8a0;
+  border-radius: 20px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #3cc878;
+}
+
+/* Custom Color Picker */
+.color-picker-custom::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.color-picker-custom::-webkit-color-swatch {
+  border: none;
+  border-radius: 8px;
+}
+
+/* Chemtest-style thick border utility */
+.chemtest-card {
+  border: 3px solid #1a1a1a;
+  box-shadow: 5px 5px 0px #1a1a1a;
+}
+
+.chemtest-card:hover {
+  box-shadow: 7px 7px 0px #1a1a1a;
+  transform: translate(-2px, -2px);
+}
+
+.chemtest-btn {
+  border: 3px solid #1a1a1a;
+  box-shadow: 4px 4px 0px #1a1a1a;
+  transition: all 0.15s ease;
+}
+
+.chemtest-btn:hover {
+  box-shadow: 6px 6px 0px #1a1a1a;
+  transform: translate(-2px, -2px);
+}
+
+.chemtest-btn:active {
+  box-shadow: 2px 2px 0px #1a1a1a;
+  transform: translate(2px, 2px);
+}
+
+/* Animation Utilities */
+.magnetic-area {
+  padding: 2.5rem;
+  margin: -2.5rem;
+}
