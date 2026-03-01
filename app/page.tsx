@@ -125,23 +125,43 @@ function Bubble({
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.6, y: 10, x: 0 }}
-      animate={{ opacity: 1, scale: 1, x: pos.x, y: pos.y }}
+      animate={{
+        opacity: 1,
+        scale: [1, 1.05, 1],
+        x: pos.x,
+        y: pos.y,
+        rotate: [0, 2, -2, 0]
+      }}
       transition={{
         opacity: { duration: 0.4, delay },
-        scale: { duration: 0.4, delay },
+        scale: {
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: delay
+        },
+        rotate: {
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: delay
+        },
         x: { duration: 2.5, ease: "easeInOut" },
         y: { duration: 2.5, ease: "easeInOut" },
       }}
-      className={`absolute px-4 py-2 rounded-full text-xs md:text-sm font-black select-none pointer-events-none max-w-[70vw] ${className}`}
+      className={`absolute px-5 py-2.5 rounded-full text-xs md:text-sm font-bold select-none pointer-events-none backdrop-blur-md shadow-lg ${className}`}
       style={{
-        background: "#fffef9",
-        border: "2.5px solid #141414",
-        boxShadow: "3px 3px 0 #141414",
+        background: "rgba(255, 255, 255, 0.45)",
+        border: "1.5px solid rgba(255, 255, 255, 0.4)",
+        backgroundImage: "radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8) 0%, transparent 60%)",
+        boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.07), inset 0 0 0 1px rgba(255, 255, 255, 0.2)",
         whiteSpace: "nowrap",
         ...style,
       }}
     >
-      {children}
+      <span className="relative z-10" style={{ textShadow: "0 1px 2px rgba(255,255,255,0.5)" }}>
+        {children}
+      </span>
     </motion.div>
   );
 }
@@ -241,7 +261,7 @@ export default function Home() {
               border: "4px solid #141414",
               boxShadow: "6px 6px 0 #141414",
               color: "#ffffff",
-              fontFamily: "var(--font-sniglet)",
+              fontFamily: "var(--font-fredoka)",
             }}
           >
             Design & share beautiful custom Eid cards ✨
@@ -249,18 +269,6 @@ export default function Home() {
         </motion.div>
 
         {/* Clear Description */}
-        <motion.p
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.35 }}
-          className="max-w-xs md:max-w-md text-center font-bold text-lg md:text-xl mb-8 md:mb-10 leading-relaxed"
-          style={{
-            color: "#141414",
-            fontFamily: "var(--font-outfit)",
-          }}
-        >
-          Make your own beautiful Eid greeting cards. Quick and fully customizable!
-        </motion.p>
 
         {/* CTA */}
         <motion.div
