@@ -25,7 +25,7 @@ const FONTS = [
 
 const EMOJIS = ["🌙", "⭐", "🕌", "🏮", "✨", "❤️", "🕊️", "🎉"];
 
-const SECTION_COLORS = ["var(--mint)", "var(--yellow)", "var(--blue)"];
+const SECTION_COLORS = ["var(--lime-300)", "var(--yellow)", "var(--cyan-300)"];
 
 const sectionVariants = {
     hidden: { opacity: 0, x: 20 },
@@ -54,7 +54,7 @@ export default function Toolbar({ templateId, onSelectTemplate, elements, update
             <motion.section variants={sectionVariants}>
                 <div
                     className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold mb-4"
-                    style={{ background: "var(--mint)", border: "2px solid var(--border)", boxShadow: "2px 2px 0 var(--border)" }}
+                    style={{ background: "var(--lime-300)", border: "2px solid var(--border)", boxShadow: "2px 2px 0 var(--border)" }}
                 >
                     🎨 Choose Theme
                 </div>
@@ -115,7 +115,7 @@ export default function Toolbar({ templateId, onSelectTemplate, elements, update
             <motion.section variants={sectionVariants} className="space-y-4">
                 <div
                     className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold mb-2"
-                    style={{ background: "var(--blue)", border: "2px solid var(--border)", boxShadow: "2px 2px 0 var(--border)" }}
+                    style={{ background: "var(--cyan-300)", border: "2px solid var(--border)", boxShadow: "2px 2px 0 var(--border)" }}
                 >
                     ✏️ Edit Content Layers
                 </div>
@@ -237,7 +237,7 @@ export default function Toolbar({ templateId, onSelectTemplate, elements, update
                                     value={el.fontSize}
                                     onChange={(e) => updateElement(el.id, { fontSize: Number(e.target.value) })}
                                     className="w-full h-2 rounded-lg appearance-none cursor-pointer"
-                                    style={{ accentColor: "var(--mint)" }}
+                                    style={{ accentColor: "var(--lime-300)" }}
                                 />
                             </div>
                         </motion.div>

@@ -8,25 +8,32 @@ export type Template = {
 
 export const TEMPLATES: Template[] = [
     {
-        id: "classic",
-        name: "Classic Emerald",
+        id: "violet",
+        name: "Violet Dream",
         bgUrl: "none",
-        bgColor: "#065f46",
-        className: "bg-gradient-to-br from-emerald-800 to-green-900 border-yellow-500",
+        bgColor: "#A8A6FF",
+        className: "bg-gradient-to-br from-[#A8A6FF] to-[#807dfa] border-[#141414]",
     },
     {
-        id: "night",
-        name: "Crescent Night",
+        id: "pink",
+        name: "Pink Fizz",
         bgUrl: "none",
-        bgColor: "#1e1b4b",
-        className: "bg-gradient-to-br from-indigo-950 to-slate-900 border-slate-300",
+        bgColor: "#FFA6F6",
+        className: "bg-gradient-to-br from-[#FFA6F6] to-[#fa7fee] border-[#141414]",
     },
     {
-        id: "light",
-        name: "Golden Dawn",
+        id: "lime",
+        name: "Lime Fresh",
         bgUrl: "none",
-        bgColor: "#fef08a",
-        className: "bg-gradient-to-tr from-amber-100 to-yellow-50 border-amber-600",
+        bgColor: "#9dfc7c",
+        className: "bg-gradient-to-br from-[#9dfc7c] to-[#7df752] border-[#141414]",
+    },
+    {
+        id: "cyan",
+        name: "Cyan Splash",
+        bgUrl: "none",
+        bgColor: "#A6FAFF",
+        className: "bg-gradient-to-br from-[#A6FAFF] to-[#53f2fc] border-[#141414]",
     },
 ];
 

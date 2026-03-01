@@ -5,6 +5,7 @@ import { Wand2, ChevronDown } from "lucide-react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import Magnetic from "@/components/motion/Magnetic";
 import { useEffect, useRef, useState } from "react";
+import { SparklesText } from "@/components/ui/sparkles-text";
 
 /* ══════════════════════════════════════════
    Reusable cursor-tracking motif
@@ -172,7 +173,7 @@ export default function Home() {
       className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden py-20 md:py-0"
       style={{
         background:
-          "linear-gradient(165deg, #b6f7d8 0%, #5ce8d8 40%, #3ab8e8 75%, #2a80d8 100%)",
+          "linear-gradient(165deg, #A8A6FF 0%, #918efa 40%, #FFA6F6 75%, #fa8cef 100%)",
       }}
     >
       {/* ── Grain texture ── */}
@@ -230,22 +231,27 @@ export default function Home() {
       <div className="relative z-10 flex flex-col items-center text-center px-4">
 
         {/* Giant bubbly title */}
-        <motion.h1
+        <motion.div
           initial={{ opacity: 0, scale: 0.72, y: 50 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ type: "spring", stiffness: 190, damping: 18 }}
-          className="font-black tracking-normal leading-[0.95] mb-6 uppercase"
-          style={{
-            fontSize: "clamp(56px, 15vw, 160px)",
-            color: "#FFE500", // Electric Yellow
-            fontFamily: "var(--font-fredoka)",
-            fontWeight: "900", // Super thick
-            letterSpacing: "0.02em",
-            textShadow: "6px 6px 0 #141414, -2px -2px 0 #141414, 2px -2px 0 #141414, -2px 2px 0 #141414, 0 10px 50px rgba(0,0,0,0.3)",
-          }}
+          className="mb-6"
         >
-          EID<br />MUBARAK
-        </motion.h1>
+          <SparklesText
+            text="EID MUBARAK"
+            className="font-black tracking-normal leading-[0.95] uppercase"
+            colors={{ first: "#FFD700", second: "#FFFFFF" }}
+            sparklesCount={25}
+            style={{
+              fontSize: "clamp(56px, 15vw, 160px)",
+              color: "#FBB03C",
+              fontFamily: "var(--font-fredoka)",
+              fontWeight: "900",
+              letterSpacing: "0.02em",
+              textShadow: "6px 6px 0 #141414, -2px -2px 0 #141414, 2px -2px 0 #141414, -2px 2px 0 #141414, 0 10px 50px rgba(0,0,0,0.3)",
+            }}
+          />
+        </motion.div>
 
         {/* Sub-pill */}
         <motion.div
@@ -257,7 +263,7 @@ export default function Home() {
           <span
             className="px-4 py-2 md:px-6 md:py-3 rounded-full text-sm md:text-xl font-bold uppercase inline-block max-w-[90vw]"
             style={{
-              background: "#F64974", // Feastables Pink
+              background: "var(--lime-300)", // Soft Pastel Green
               border: "4px solid #141414",
               boxShadow: "6px 6px 0 #141414",
               color: "#ffffff",
@@ -281,7 +287,7 @@ export default function Home() {
               href="/generator"
               className="inline-flex items-center gap-2 md:gap-3 px-8 py-4 md:px-10 md:py-5 rounded-xl md:rounded-2xl font-black text-xl md:text-2xl group uppercase tracking-wide"
               style={{
-                background: "#FFE500", // Yellow CTA
+                background: "var(--yellow)", // Yellow CTA
                 color: "#141414", // Black text
                 fontFamily: "var(--font-fredoka)",
                 border: "4px solid #141414",
